@@ -1,0 +1,179 @@
+.profiles-wrapper {
+  background: #F2F2F2;
+  min-height: 100vh;
+  width: 100%;
+  padding: 76px 30px 30px 30px;
+  box-sizing: border-box;
+  animation: appear-right 0.5s ease-out;
+  transition-duration: 0.5s;
+
+  &.hidden {
+    transform: translateX(100%);
+  }
+
+  .profiles {
+    &__title {
+      font-family: Wigrum;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 22px;
+    }
+
+    &__description {
+      margin-top: 16px;
+
+      font-family: Wigrum;
+      font-size: 14px;
+      line-height: 24px;
+
+      color: #000000;
+
+      mix-blend-mode: normal;
+      opacity: 0.75;
+    }
+
+    &__items-wrapper{
+      margin-top: 20px;
+
+      .p-item {
+        display: flex;
+        margin-top: 10px;
+        transition-duration: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background: rgba(255, 179, 95, 0.25);
+
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+
+        &__avatar {
+          box-sizing: border-box;
+          height: 90px;
+          min-width: 142px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: #ECEDF0;
+          border-bottom: 2px solid #F2C4A3;
+          padding: 9px;
+
+          > img {
+            border-radius: 50%;
+            width: 72px;
+            height: 72px;
+            transition-duration: 0.3s;
+          }
+        }
+
+        &__info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          padding: 20px;
+          border-bottom: 2px solid #ECEDF0;
+
+          > span {
+            font-family: Wigrum;
+            font-size: 16px;
+            line-height: 24px;
+            height: fit-content;
+          }
+
+          .p-item__email {
+            text-align: right;
+            margin-left: 6px;
+
+            &-label {
+              font-family: Wigrum;
+              font-size: 10px;
+              line-height: 10px;
+              mix-blend-mode: normal;
+              opacity: 0.5;
+            }
+
+            &-body {
+              font-family: Wigrum;
+              font-size: 16px;
+              line-height: 24px;
+
+              > a {
+                text-decoration: none;
+                color: #CD845C;
+                transition-duration: 0.3s;
+
+                &:hover {
+                  color: #0000ee;
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .profiles-wrapper {
+    padding: 20px;
+
+    .profiles {
+      &__items-wrapper{
+
+        .p-item {
+          overflow: scroll;
+
+          &__avatar {
+            min-width: 80px;
+            height: 90px;
+            padding: 12px;
+
+            > img {
+              height: 56px;
+              width: 56px;
+            }
+          }
+
+          &__info {
+            flex-direction: column;
+            align-items: flex-start;
+
+            > span {
+              font-size: 16px;
+              line-height: 24px;
+            }
+
+            .p-item__email {
+              float: left;
+
+              &-label {
+                display: none;
+              }
+
+              &-body {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes appear-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,161 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  height: 48px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  animation: appear-top 0.5s ease-out;
+
+  &__nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &-item {
+      padding: 10px;
+      margin-right: 21px;
+      font-family: Wigrum;
+      font-size: 14px;
+      color: black;
+      text-decoration: none;
+      line-height: 20px;
+      height: 20px;
+      border: 1px solid transparent;
+      transition-duration: 0.3s;
+      border-radius: 6px;
+
+      &:hover {
+        color: #CD845C;
+      }
+    }
+  }
+
+  &__profile {
+    height: 48px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    cursor: pointer;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      margin-right: 30px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: #CD845C;
+      }
+
+      &__avatar > img {
+        height: 36px;
+        width: 36px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      &__username {
+        font-family: Wigrum;
+        font-size: 14px;
+      }
+    }
+
+    &-controls {
+      display: flex;
+      align-items: center;
+
+      &__notifications {
+        display: flex;
+        align-items: center;
+        height: 36px;
+        margin-right: 20px;
+        cursor: pointer;
+        transition-duration: 0.3s;
+
+        &:hover {
+          color: #CD845C;
+
+          > img {
+            animation: shake 1s ease-in-out;
+            filter: invert(53%) sepia(61%) saturate(367%) hue-rotate(337deg) brightness(96%) contrast(88%);
+          }
+        }
+
+        > img {
+          transition-duration: 0.3s;
+          width: 18px;
+          height: 21px;
+          margin-right: 6px;
+        }
+
+        > span {
+          font-family: Roboto;
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 36px;
+        }
+      }
+
+      &__menu {
+        cursor: pointer;
+        width: 15px;
+        height: 14px;
+        transition-duration: 0.3s;
+
+        &:hover > img {
+          filter: invert(53%) sepia(61%) saturate(367%) hue-rotate(337deg) brightness(96%) contrast(88%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    z-index: 1;
+    padding: 10px 20px;
+    height: auto;
+    display: block;
+
+    &__nav {
+      display: none;
+    }
+
+    &__profile {
+      justify-content: space-between;
+    }
+  }
+}
+
+@keyframes shake {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  60% {
+    transform: rotate(15deg);
+  }
+  80% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes appear-top {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}

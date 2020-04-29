@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import '../styles/profiles.scss';
 
 class Profiles extends Component {
+  /**
+   * Getter for sorted data
+   *
+   * @returns {*[]}
+   */
   get data() {
     const {
       data,
@@ -25,6 +30,17 @@ class Profiles extends Component {
     }
   }
 
+  /**
+   * Get content of each profile
+   *
+   * @param avatar
+   * @param first_name
+   * @param last_name
+   * @param email
+   * @param id
+   * @param index
+   * @returns {*}
+   */
   getProfileItem = ({ avatar, first_name, last_name, email, id }, index) => (
     <div
       className="p-item"

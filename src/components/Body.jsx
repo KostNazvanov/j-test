@@ -6,6 +6,13 @@ import patternMobileImage from '../assets/mobile-pattern.svg';
 import circleImage from '../assets/circle.svg';
 
 class Body extends Component {
+  /**
+   * Method for getting screen size
+   * If we would use this in more places
+   * I would move this method into ./utils folder
+   *
+   * @returns {boolean}
+   */
   isMobile = () => window.innerWidth <= 1024;
 
   render = () => {

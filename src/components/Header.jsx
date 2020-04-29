@@ -8,6 +8,13 @@ import menuIcon from '../assets/menu.svg';
 const noop = () => {};
 
 class Header extends Component {
+  /**
+   * Config for Navigation menu
+   * If we had more of these -
+   * I would move it into ./configs folder
+   *
+   * @type {*[]}
+   */
   menus = [
     {
       to: '#browse',
@@ -27,6 +34,11 @@ class Header extends Component {
     },
   ];
 
+  /**
+   * Get navigation bar content
+   *
+   * @returns {*}
+   */
   getNav = () => {
     return (
       <div className="header__nav">
@@ -44,6 +56,11 @@ class Header extends Component {
     )
   };
 
+  /**
+   * Get profile content
+   *
+   * @returns {*}
+   */
   getProfile = () => {
     const {
       user: {

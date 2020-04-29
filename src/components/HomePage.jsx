@@ -44,10 +44,20 @@ class HomePage extends Component {
     }, onFinish)
   };
 
+  /**
+   * Fetch user from API
+   * Just like data fetching, this
+   * should be implemented as saga/thunk
+   * @returns {Promise<void>}
+   */
   fetchUser = async () => {
     this.setState({ user: await fetchUser() });
   };
 
+  /**
+   * Handle scroll event and fetch new data
+   * if bottom of the page is reached
+   */
   handleScroll = () => {
     const target = document.body;
     const offset = 50;
